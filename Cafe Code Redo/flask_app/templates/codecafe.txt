@@ -1,0 +1,162 @@
+<form action="/finishedorder" method="post" class="col-4 p-4" >
+											<div class="container mt-4">
+												<div class="row">
+												<div class="col-6 row-heading">
+													Item
+												</div>
+												<div class="col-3 row-heading">
+												Quantity
+												</div>
+												<div class="col-2 row-heading">
+												Price
+												</div>
+												
+											</div>
+											<div class="row">
+												<div class="col-6">
+												1. Smallbyte
+												</div>
+												<div class="col-3">
+												<input type="number" name=""  onChange="calculateTotal()" id=""> 
+												</div>
+												<div class="col-2">
+												<input type="number" value="3.20" id=""/>
+												</div>
+											</div>
+											
+												<div class="row my-3">
+												<div class="col-6">
+												2. Mediumbyte
+												</div>
+												<div class="col-3">
+												<input type="number" value="0" class="" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+											
+											<div class="row my-3">
+												<div class="col-6">
+												3. Largebtye
+												</div>
+												<div class="col-3">
+												<input type="number" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+											</div>
+											</div>
+
+											
+											<div class="row my-3">
+												<div class="col-6">
+												4. Steampunk Latte
+												</div>
+												<div class="col-3">
+												<input type="number" name="steampunk latte" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+
+
+											<div class="row my-3">
+												<div class="col-6">
+												5.Red Espresso
+												</div>
+												<div class="col-3">
+												<input type="number" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+
+											<div class="row my-3">
+												<div class="col-6">
+												6. Bubbletea
+												</div>
+												<div class="col-3">
+												<input type="number" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+											
+											<div class="row my-3">
+												<div class="col-6">
+												7.Salmonpoke
+												</div>
+												<div class="col-3">
+												<input type="number" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+
+											
+											<div class="row my-3">
+												<div class="col-6">
+												8.Ramen
+												</div>
+												<div class="col-3">
+												<input type="number" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+
+											<div class="row my-3">
+												<div class="col-6">
+												9.Bahnmi
+												</div>
+												<div class="col-3">
+												<input type="number" class="" value="0" id=""/>
+												</div>
+												<div class="col-2">
+												<input type="number" readonly value="0" id=""/>
+												</div>
+											</div>
+
+
+
+											<div class="row my-4">
+												<div class="col-9 text-right total">
+												Total
+												</div>
+												
+												<div class="col-2 total-val">
+												<span id="total_value">0</span>
+												
+												</div>
+											</div>
+
+
+
+	<!-- <div class="container with-border black">
+								<div class="flex-container"> -->
+								<!-- <p class="primary">{{booking.user.first_name}} {{booking.user.last_name}}</p> -->
+								<!-- </div>
+								<div class="flex-container">
+									<h3 >Scheduled Time:{booking.time}}</h3>
+									<p class="primary"> {{booking.time}}</p>
+									</div>
+								<div class="flex-container">
+									<h3 >Coding Date:</h3>
+									<p class="primary"> {{booking.date}}</p>
+									</div>
+								<div class="flex-container">
+								<h3 >Coding Language:</h3>
+								<p class="primary"> {{booking.language}}</p>
+								</div>
+								<div class="flex-container">
+								<h3 >Booth Number</h3>
+								<p class="primary">{{booking.booth}}</p>
+								</div>
+
+											

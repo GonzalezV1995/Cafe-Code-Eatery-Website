@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Order Cart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- <link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css')}}" /></noscript>
+		
+		<!-- Javascript functionality -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js')}}" defer></script> 
+		<script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js')}}" defer ></script> 
+		<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js')}}" defer  ></script> 
+		<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js')}}"  defer ></script> 
+		<script src="{{ url_for('static', filename='assets/js/browser.min.js')}}" defer ></script> 
+		<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js')}}" defer ></script> 
+		<script src="{{ url_for('static', filename='assets/js/util.js')}}"  defer></script> 
+		<script src="{{ url_for('static', filename='assets/js/main.js')}}"  defer></script> 
+		<script src="{{ url_for('static', filename='assets/js/quantityprice.js')}}"  defer ></script> 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" defer ></script>
+
+
+	</head>
+	<body class="no-sidebar is-preload">
+		
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">My Cart</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/accountinfo">Account</a></li>
+								<li><a href="/logout">Log Out</a></li>
+
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">
+							<header>
+								<h2><a href="#">My Order Summary</a></h2>
+							</header>
+							<!-- <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+-->							
+							<form action="/processbooking" method="post">
+
+							<label for="appt">Choose a Time, Booth and Language for your Meeting:</label>
+
+							<label for="lname">Time:</label>
+							<input type="time" id="time" name="time"
+									min="09:00" max="18:00" required>
+
+							<input type="hidden" name="user_id" value="{{session.user_id}}">
+
+							<label for="start">Date:</label>
+							<input type="date" id="start" name="date" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+
+							<label for="language">Choose a Language:</label>
+							<select id="language" name="language">
+							<option value="python">Python</option>
+							<option value="javascript">Javascript</option>
+							<option value="java">Java</option>
+							<option value="c#">C#</option>
+							<option value="Ruby on Rails">Ruby on Rails</option>
+							</select>
+							
+							<div>
+								<label for="booth">Choose a Booth</label>
+								<select id="booth" name="booth">
+									<!-- name gets sent to the controller  -->
+								<option value="one">1</option>
+								<option value="two">2</option>
+								<option value="three">3</option>
+								<option value="four">4</option>
+								<option value="five">5</option>
+								</select>
+
+
+							</div>
+						
+			
+							<input type="submit" value="Submit">
+							</article>
+					</form>
+
+
+						</article>
+						
+					</div>
+					
+					
+
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-8 col-12-mobile" id="content">
+								<article id="main">
+				
+									<section>
+										<header>
+											<!-- <h3>Account Info</h3> -->
+											
+											<footer>
+												
+										
+											
+											</div>
+
+											<div>
+												
+
+
+											</div>
+									
+												<br>
+												
+										</header>
+									</section>
+									</section>
+
+								</footer>
+						
+							
+							</div>
+							<div class="col-4 col-9-mobile" id="sidebar">
+								<hr class="first" />
+								<section>
+								
+	
+					
+						
+								</section>
+								<hr />
+							</div>
+						</div>
+						<hr />
+				
+					</div>
+
+				</div>
+			
+				
+					</div>
+				
+					
+				
+						<!-- <a href="orderconfirmation.html"><button type="submit" class="btn btn-primary">Submit</button></a> -->
+		
+				
+						</form>
+				
+					
+				</div>
+
+						<hr />
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+
+						<!-- Tweets -->
+							<section class="col-4 col-12-mobile">
+								<header>
+									<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
+								</header>
+								<ul class="divided">
+									<li>
+										<article class="tweet">
+											Follow us on Twitter
+											<span class="timestamp">5 minutes ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="tweet">
+											Apple Recruiter John Adams is scouting coders at our cafe on 12/23
+											<span class="timestamp">30 minutes ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="tweet">
+											HTML 5 and CSS? Short cut to Bootstrap? Templates? What do you think?
+											<span class="timestamp">3 hours ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="tweet">
+											Coding Competition on October 12th. Please register on our website 
+											<span class="timestamp">5 hours ago</span>
+										</article>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Posts -->
+							<section class="col-4 col-12-mobile">
+								<header>
+									<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
+								</header>
+								<ul class="divided">
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Download our MySQL Querie Cheat Sheet</a></h3>
+											</header>
+											<span class="timestamp">3 hours ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Most in Demand Tech Languages in 2023</a></h3>
+											</header>
+											<span class="timestamp">6 hours ago</span>
+										</article>
+									</li>
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Back and Front End Career Paths in Chicago </a></h3>
+											</header>
+											<span class="timestamp">Yesterday</span>
+										</article>
+									</li>
+									<li>
+										<article class="post stub">
+											<header>
+												<h3><a href="#">Best Places to Code in Chicago</a></h3>
+											</header>
+											<span class="timestamp">2 days ago</span>
+										</article>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Photos -->
+							<section class="col-4 col-12-mobile">
+								<header>
+									<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
+								</header>
+								<div class="row gtr-25">
+									<div class="col-6">
+										<a href="#" class="image fit"><img src="../static/images/stockphoto1.avif" alt="" /></a>
+									</div>
+									<div class="col-6">
+										<a href="#" class="image fit"><img src="../static/images/stockphoto2.jpeg" alt="" /></a>
+									</div>
+									<div class="col-6">
+										<a href="#" class="image fit"><img src="../static/images/stockphoto3.jpeg" alt="" /></a>
+									</div>
+									<div class="col-6">
+										<a href="#" class="image fit"><img src="../static/images/stockphoto4.jpeg.crdownload" alt="" /></a>
+									</div>
+									<div class="col-6">
+										<a href="#" class="image fit"><img src="../static/images/stockphoto5.webp" alt="" /></a>
+									</div>
+									<div class="col-6">
+										<a href="#" class="image fit"><img src="../static/images/stockphoto7.jpeg" alt="" /></a>
+									</div>
+								</div>
+							</section>
+
+					</div>
+					<hr />
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section class="contact">
+										<header>
+											<h3>Contact Us</h3>
+										</header>
+										<p>5546 W. Grand Avenue Chicago Illinois</p>
+										<p>773-428-6159</p>
+										<ul class="icons">
+											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section>
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+
+	</body>
+</html>
