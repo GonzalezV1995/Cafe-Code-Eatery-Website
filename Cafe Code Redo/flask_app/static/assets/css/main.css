@@ -46,7 +46,7 @@ blockquote, q {
 		content: none;
 	}
 
-table {
+table  {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -173,6 +173,13 @@ input, select, textarea {
 		top: -0.5em;
 		font-size: 0.8em;
 	}
+
+	.bookingtable td {
+		text-align: center;
+
+
+	}
+
 
 	blockquote {
 		border-left: solid 0.5em #ddd;

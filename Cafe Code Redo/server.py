@@ -16,4 +16,8 @@ if __name__=="__main__":
 # python3 server.py
 
 
+# log into terminal for already completed project
+
+
+
 

@@ -48,6 +48,7 @@
 								<li><a href="/">Home</a></li>
 								<li><a href="/accountinfo">Account</a></li>
 								<li><a href="/logout">Log Out</a></li>
+								<li><a href="/bookinglist">Bookings</a></li>
 
 							</ul>
 						</nav>
@@ -72,7 +73,8 @@
 							<input type="time" id="time" name="time"
 									min="09:00" max="18:00" required>
 
-							<input type="hidden" name="user_id" value="{{session.user_id}}">
+							<input type="hidden" name="user_id" value="{{session['user_id']}}">
+							
 
 							<label for="start">Date:</label>
 							<input type="date" id="start" name="date" value="2018-07-22" min="2018-01-01" max="2018-12-31">
@@ -89,7 +91,7 @@
 							<div>
 								<label for="booth">Choose a Booth</label>
 								<select id="booth" name="booth">
-									<!-- name gets sent to the controller  -->
+									
 								<option value="one">1</option>
 								<option value="two">2</option>
 								<option value="three">3</option>

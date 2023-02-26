@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Order Confirmation</title>
+		<title>Edit Order</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- <link rel="stylesheet" href="assets/css/main.css" />
@@ -35,7 +35,7 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">My Booking Summary</a></h1>
+								<h1><a href="index.html" id="logo">Booking List</a></h1>
 							</header>
 						</div>
 					<!-- Nav -->
@@ -43,55 +43,41 @@
 							<ul>
 								<li><a href="/">Home</a></li>
 								<li><a href="/accountinfo">Account</a></li>
-								<li><a href="/bookinglist">Bookings</a></li>
-								<li><a href="/logout">Login</a></li>
+								<li><a href="/logout">Logout</a></li>
 
 							</ul>
 						</nav>
 				</div>
 			<!-- Main -->
-				<div class="wrapper style1">
-
-					<div class="container">
-						<article id="main" class="special">
-							<header>
-								<h2><a href="#">Cafe Code</a></h2>
+				<div>
                     
-                                <p>Please arrive 10 minutes before your designated time. Were looking forward to coding with you!</p>
+                <table class="bookingtable">
+                    <tr>
+                    <th>Name of Booking:</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Language</th>
+                    <th>Booking</th>
+                    <th>Update</th>
+                    </tr>
 
-
-
-							<div class="container with-border black">
-								<div class="flex-container"> 
-								<p>Name: {{booking.user.first_name}} {{booking.user.last_name}}</p>
-								
-							</div>
-							<div class="flex-container">
-								<p >Scheduled Time: {{booking.time}}</p>
-								</div>
-							<div class="flex-container">
-								<p>Coding Date: {{booking.date}}</p>
-								
-								</div>
-							<div class="flex-container">
-							<p>Coding Language: {{booking.language}}<p>
-							
-							</div>
-							<div class="flex-container">
-							<p >Booth Number: {{booking.booth}}</p>
-
-							</div>			
-					
-							</div>
-							</header>
-							<!-- <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-	 -
-						</article>
-						<hr />
-					</div>
-				</div>
-
-			<!-- Footer -->
+                    <tr>
+                    <td>{{user.first_name}}</td>
+                    <td>3:10pm</td>
+                    <td>02/24/2023</td>
+                    <td>C#</td>
+                    <td>4</td>
+                    <td><a href="/editbooking">edit</a>
+                        <a href="/booking/delete/{{booking_id}}">delete</a>
+                    </td>
+        
+                    </tr>
+                
+                </table>
+                
+                
+                </div>
+		
 			<div id="footer">
 				<div class="container">
 					<div class="row">

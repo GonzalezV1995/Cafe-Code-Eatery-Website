@@ -13,26 +13,22 @@ def createanorder():
     return render_template('bookingpage.html')
 
 
+    if "user_id" not in session:
+        flash("You must be logged in to access the dashboard.")
+        return redirect("/")
 
+        # user = User.get_one_by_id(session["user_id"])
 
-
-
-    # if "user_id" not in session:
-    #     flash("You must be logged in to access the dashboard.")
-    #     return redirect("/")
-
-    #     user = User.get_one_by_id(session["user_id"])
-
-    #     return render_template('orderconfirmation', user)
+        # return render_template('orderconfirmation', user)
 
 
 
 @app.route('/accountinfo')
 def viewaccount():
 
-    # if "user_id" not in session:
-    #     flash("You must be logged in to access the dashboard.")
-    #     return redirect("/")
+    if "user_id" not in session:
+        flash("You must be logged in to access the dashboard.")
+        return redirect("/")
 
     # user = User.get_user_by_id(session["user_id"])
     
@@ -43,9 +39,13 @@ def viewaccount():
 
 @app.route("/processbooking", methods=['POST'])
 def process_order():
+
     booking_id=Booking.save(request.form)
+    if not booking_id:
+        redirect ("/createorder")
 
     return redirect (f"/finishedorder/{booking_id}")
+
 
 
 
@@ -62,6 +62,81 @@ def show_booking(booking_id):
 
     
     return render_template("orderconfirmation.html", booking=one_booking)
+
+
+@app.route('/bookinglist')
+def listofbookings():
+    return render_template('bookinglist.html')
+
+# @app.route('/editbooking')
+# def edit_page():
+#     return render_template("editbooking.html")
+
+
+
+@app.route('/edit/booking/<int:id>')
+def edit_booking(id):
+    if "user_id" not in session:
+        flash("You must be logged in to create a user")
+        return redirect("/")
+    
+    data={
+        'id':id
+    }
+
+    one_booking= Booking.get_booking_by_id_with_user(data)
+
+    return render_template("editbooking.html", booking=one_booking)
+
+    # value on the left side of variable appears on the html document
+
+@app.route("/update/booking/<int:id>", methods=["POST"])
+def update_booking(id):
+    
+    data={
+        "time":request.form["time"],
+        "date":request.form["date"],
+        "language":request.form["language"],
+        "booth":request.form["booth"],
+        "id": id
+    }
+
+    valid_booking=Booking.validate_painting(request.form)
+
+    if not valid_booking:
+        return redirect (f'/edit/booking/{id}')
+
+        # if your route has an id and is being reference in return redirect
+        #  make sure to put an f string around it so we can see just the id number, not the <int:id>
+    
+    Booking.update_booking(data)
+
+    return redirect ('/dashboard')
+
+
+@app.route('/booking/delete/<int:booking_id>')
+def delete_booking(booking_id):
+    data ={
+        'id':booking_id
+    }
+
+    # were deleting a booking, so we should reference the id of the user class 
+
+    Booking.delete_booking_by_id(data)  
+    return redirect('/bookinglist')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

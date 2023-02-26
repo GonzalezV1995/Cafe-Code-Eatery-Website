@@ -147,14 +147,41 @@ class Booking:
         return 
 
 
-
-
     @classmethod
     def update_booking(cls, data):
         query = """UPDATE bookings
                     SET date = %(date)s, time = %(time)s, booth = %(booth)s,  language = %(language)s, 
                     WHERE id = %(id)s;"""
         connectToMySQL(cls.db).query_db(query, data)
+
+
+    @staticmethod
+    def validate_booking(booking_dict):
+        valid = True
+        flash_string = "   field is required. Response must be at least 2 characters."
+    
+        if (booking_dict["time"]) == '':
+            # is the price is blank-- use the strings if you want to check if its blank
+            flash(" field must not be blank")
+            valid = False
+
+        if (booking_dict["date"]) == '':
+            # is the price is blank-- use the strings if you want to check if its blank
+            flash(" field must not be blank")
+            valid = False
+
+        if len(booking_dict["language"]) < 4:
+            flash("Language should be at least 4 characters long")
+            valid = False
+
+        if (booking_dict["booking"]) == '':
+            # is the price is blank-- use the strings if you want to check if its blank
+            flash(" field must not be blank")
+            valid = False
+
+        
+        return valid
+
 
 
     # @app.route('/order/delete/<int:painting_id>')
